@@ -31,11 +31,10 @@ createPost = (body) => {
 
   if (!title) error.push("Title field is required")
   if (!content) error.push("Content field is required")
-  console.log("im here");
   if (error.length > 0) {
     return {
       status: 400,
-      message: "Fields are missing",
+      message: "Fields are missing: ",
       errors: error
     }
   } else {
@@ -86,7 +85,7 @@ updatePost = (id, body) => {
     if (error.length > 0) {
       return {
         status: 400,
-        message: "Fields are missing",
+        message: "Fields are missing: ",
         errors: error
       }
     } else {
@@ -105,7 +104,6 @@ updatePost = (id, body) => {
     }
   }
 }
-
 
 
 module.exports = {
